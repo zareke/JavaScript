@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro a JS</title>
+    <style>
+        body {background-image: linear-gradient(rgb(255, 255, 255), rgb(202, 202, 188));
+        display: flex; align-items: center; justify-content: center;}
+        *{font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+    </style>
+</head>
+
+<body>
+    <div>
+    <script src="ejercicios.js"></script>
+    <script src="utils.js"></script>
+    <div id="resultado" onsubmit="return false">
+        <div>
+            <form>
+                <h1>1 - Calculadora de edad</h1>
+                <p>Nombre:</p>
+                <input type="text" name="nombre" id="nombre">
+                <p>Fecha de nacimiento</p>
+                <input type="text" name="datesita" id="datesita" placeholder="YYYY-MM-DD">
+            </form><br />
+            <input type="submit" value="Averiguar mi edad" onclick='CalcularEdad(nombre,datesita,edadCont)'><br /><br />
+            <p>Edad:</p> <textarea readonly id="edadCont"></textarea>
+            <p id="ej1"></p>
+        </div>
+        </form>
+        <div>
+            <h1>2 - Tirando fruta</h1>
+            <p>No sabes que hay?</p>
+            <button onclick="TirandoFruta(1,frutasText)">Pedir lista de frutas</button>
+            <p>Ya sabes que queres?</p>
+            <button onclick="TirandoFruta(2,frutasText)">Pedir fruta</button><br/><br/>
+            <p>Resultado:</p><textarea readonly id="frutasText" style="height: 181px;width: 220px;"></textarea>
+        </div>
+        <div>
+            <h1>3 - Comparando datos y tipos</h1>
+            <button onclick="ComparandoDatosYTipos(1,datosTexto)">10 == '10'?</button><br /><br />
+            <button onclick="ComparandoDatosYTipos(2,datosTexto)">10 === '10'?</button><br /><br />
+            <button onclick="ComparandoDatosYTipos(3,datosTexto)">Porque son distintos?</button><br /><br />
+            <button onclick="ComparandoDatosYTipos(4,datosTexto)">De que tipo de dato es 10.6?</button><br /><br />
+            <button onclick="ComparandoDatosYTipos(5,datosTexto)">¿Es cierto que para JavaScript true es == 1? ¿Qué conclusiones
+                podemos obtener?</button>
+         <p>Resultado:</p><textarea readonly id="datosTexto"  style="height: 100px;width: 300px;"></textarea>
+
+        </div>
+        <div>
+            <h1>4 - Yo objeto</h1>
+            <button onclick="YoObjeto(1, yoText)">Listar ciudades</button><br /><br />
+            <button onclick="YoObjeto(2, yoText)">Averiguar datos de una ciudad</button><br /><br />
+            <p>Resultado:</p><textarea readonly id="yoText" style="height: 100px;width: 250px;"></textarea>
+            
+        </div>
+        <div>
+            <h1>5 - Doble de elementos</h1>
+            <p>Escriba numeros separados por una coma</p>
+            <textarea id="numeros" name="numeros"></textarea>
+            <button onclick="DobleDeElementos(numeros,dobleText)">A doblar los numeros!</button>
+            <p>Resultado:</p><textarea readonly id="dobleText" style="height: 100px;width: 250px;"></textarea>
+        </div>
+        <div>
+            <h1>6 - Triangulo de asteriscos</h1> 
+            <button onclick="TrianguloDeAsteriscos(1,triTexto)">Dibujar triangulo numero 1</button><br /><br />
+            <button onclick="TrianguloDeAsteriscos(2,triTexto)">Dibujar triangulo numero 2</button>
+            <p>Resultado:</p><textarea readonly id="triTexto" style="height: 100px;width: 250px;"></textarea>
+        </div>
+        <div>
+            <h1>7 - Nombres con A</h1>
+            <p>Escriba nombres separados por una coma</p>
+            <textarea id="ns" name="ns"></textarea>
+            <button onclick="NombresConA(ns,aTexto)">Listar nombres con A</button>
+            <p>Resultado:</p><textarea readonly id="aTexto" style="height: 100px;width: 250px;"></textarea>
+        </div>
+        <div>
+            <h1>8 - Reemplazar caracteres</h1>
+            <p>Cadena:</p>
+            <textarea id="cadena"></textarea>
+            <p>Caracteres a reemplazar:</p>
+            <textarea id="palabra"></textarea>
+            <p>Reemplazo:</p>
+            <textarea id="ganadora"></textarea><br/><br/>
+            <button onclick="ReemplazarPalabras(cadena,palabra,ganadora,reemText)">Reemplazar</button>
+            <p>Resultado:</p><textarea readonly id="reemText" style="height: 100px;width: 250px;"></textarea>
+        </div>
+        <div>
+            <h1>9 - Cortar texto</h1>
+            <p>Cadena:</p>
+            <textarea id="cadenaACortar"></textarea>
+            <p>Cantidad de caracteres que se quedan:</p>
+            <textarea id="cant"></textarea><br/><br/>
+            <button onclick="CortarTexto(cadenaACortar,cant,cortText)">Cortar</button>
+            <p>Resultado:</p><textarea readonly id="cortText" style="height: 100px;width: 250px;"></textarea>
+        </div>
+        <div>
+            <h1>10 - String con separador</h1>
+            <p>Escriba cosas separadas por una coma</p>
+            <textarea id="cadenaSeparar"></textarea>
+            <button onclick="Separador(cadenaSeparar,sepText)">Separar</button>
+            <p>Resultado:</p><textarea readonly id="sepText" style="height: 100px;width: 250px;"></textarea>
+        </div>
+        <div>
+            <h1>11 - Calculadora de recaudacion</h1>
+            <p>Ingrese una lista de objetos junto con sus respectivos totales, separados por coma</p>
+            <textarea id="cadenaObjetos"></textarea>
+            <button onclick="Recaudar(cadenaObjetos, recText)">Recaudar</button>
+            <p>Resultado:</p><textarea readonly id="recText" style="width: 250px;"></textarea>
+        </div>
+    </div>
+</body>
+
+</html>
